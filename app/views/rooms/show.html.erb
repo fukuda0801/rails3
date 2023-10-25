@@ -1,0 +1,16 @@
+<div class = "hotelContent">
+    <p><%= image_tag @room.hotel.url, class: "hotelContentImg" %></p>
+    <div class = "hotelContentDetail">
+        <p><%= @room.name %></p>
+        <p><%= @room.address %></p>
+        <p>★★★★★</p>
+        <p><%= @room.value %></p>
+        <p><%= @room.introduction %></p>
+    </div>
+
+</div>
+<div class = "hotelContentBtn">
+    <p class = "hotelContentBtnP"><%= link_to "戻る", :back, class: "hotelB" %></p>
+    <p class = "hotelContentBtnP"><%= link_to "編集", edit_room_path(@room), class: "hotelB" %></p>
+    <p class = "hotelContentBtnP"><%= link_to "削除", room_path(@room),method: :delete, data: { confirm: "本当に削除しますか？"}, class: "hotelB" %></p>
+</div>

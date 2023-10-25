@@ -1,0 +1,24 @@
+<%= image_tag @user.avatar  if @user.avatar.attached %>
+
+<h2 class = "optionTitle">設定</h2>
+<div class = "userOption">
+    <ul class = "userOptionTab">
+        <li><%= link_to "アカウント", homes_show_path, class: "option" %></li>
+        <li><%= link_to "プロフィール", user_path(current_user.id), class: "option" %></li>
+    </ul>
+
+    <div>
+        <div class = "userAccount">
+            <h3>プロフィール</h3>
+            <p><%= link_to "編集",edit_user_path(current_user.id),class: "optionEdit" %></p>
+        </div>
+        <div class = "userEmail">
+            <p>ー ユーザー名 ー</p>
+            <%= @user.name %>
+        </div>
+        <div class = "userPassword">
+            <p>ー 一言紹介 ー</p>
+            <%= @user.introduction %>
+        </div>
+    </div>
+</div>

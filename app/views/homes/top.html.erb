@@ -1,0 +1,18 @@
+<div class = "mainSearch">
+    <h1 class = "mainTitle">Hamster Travalで素敵な旅を</h1>
+    <div class = "searchBox">
+        <%= search_form_for @q, url: search_rooms_path do |f| %>
+            <%= f.search_field :address_cont, class: "searchArea" %>
+            <br>
+            <%= f.submit '検索', class: "searchBtn" %>
+        <% end %>
+    </div>
+
+    <div class = "mainContent">
+        <p class = "mainContentTitle">〜 popular tourist spot 〜</p>
+        <%= link_to "東京", "/rooms/search?q%5Baddress_cont%5D=東京&commit=検索", class: "mainContentFavorite" %>
+        <%= link_to "大阪", "/rooms/search?q%5Baddress_cont%5D=大阪&commit=検索", class: "mainContentFavorite" %>
+        <%= link_to "京都", "/rooms/search?q%5Baddress_cont%5D=京都府&commit=検索", class: "mainContentFavorite" %>
+        <%= link_to "札幌", "/rooms/search?q%5Baddress_cont%5D=札幌&commit=検索", class: "mainContentFavorite" %>
+    </div>
+</div>
