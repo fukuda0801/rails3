@@ -7,29 +7,70 @@ body{
     box-sizing: border-box;
     background-color: #f5fffa;
 }
-.menu_box{
-    text-align: right;
+
+.navbar {
+    width: 20%;
+    background-color:#000066;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 6rem;
+    margin-left: 0;
 }
 
-#toggle{
-    display:none;
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    color: #fff;
 }
 
-.dropdown_menu{
-    display:none;
+.nav-menu>li {
+    position: relative;
+    list-style: none;
+    padding: 1rem 0;
 }
 
-#toggle:checked+.dropdown_menu{
+.nav-menu>li>a {
+    color: #fff;
+}
+
+.nav-menu>li>a::after {
+    padding-left: 0.2rem;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1rem;
+    content: '\f0d7';
+}
+
+
+.nav-menu a {
+    text-decoration: none;
+}
+
+
+.nav-menu li li a {
     display: block;
+    padding: 1rem;
+    color:#000066;
 }
 
-.dropdown_menu li{
-    display: block;
-    width:120px;
-    text-align: center;
-    background-color: white;
-    border: outset 2px;
-    cursor: pointer;
+.nav-menu li ul {
+    position: absolute;
+    width: 200px;
+    top: 3rem;
+    height: 0;
+    overflow: hidden;
+    box-shadow: 0 0px 5px #333;
+    background-color: #efefef;
+}
+
+.nav-menu li:hover>ul {
+    height: auto;
+    overflow: visible;
+}
+
+.nav-menu li li a:hover {
+    background-color:#000066;
+    color: #fff;
 }
 
 /*ヘッダー*/
@@ -68,6 +109,20 @@ body{
 .headerLogo,.headerLogo:visited{
     color:white;
 }
+
+.userIconImgHome{
+    width:2rem;
+    height:2rem;
+    display: block;
+    margin-top:2rem;
+}
+
+.notIconImg{
+    margin-top: 2rem;
+}
+
+
+
 
 /*テーブル関連（ログイン時など）*/
 
@@ -157,6 +212,16 @@ th, td{
 
 .userPassword{
     font-size: 1.3rem;
+    margin-bottom:2rem;
+}
+
+.userIcon{
+    font-size: 1.3rem;
+}
+
+.userIconImg{
+    display: block;
+    width:20%;
 }
 
 /*アカウント編集画面*/
@@ -444,6 +509,53 @@ ul{
     color:white;
 }
 
+.reserBtn{
+    padding:0.2rem 1.5rem;
+    background-color: #003399;
+    color:white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.reserField{
+    display: block;
+    margin: 0.3rem;
+}
 
 
+/*予約確認画面*/
+.reserConfirmTitle{
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 700;
+}
 
+.reserConfirm{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.reserCheckin{
+    margin-bottom: 1.5rem;
+}
+
+.reserCheckout{
+    margin-bottom: 1.2rem;
+}
+
+.reserConfirmSubmit{
+    padding: 0.2rem 2rem;
+    background-color: #000066;
+    color:white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+}
+
+.reserConfirmBack{
+    margin-bottom: 3rem;
+}

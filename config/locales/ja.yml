@@ -9,3 +9,7 @@ ja:
         value: 料金
         address: 住所
         hotel: 画像
+      reservation:
+        checkin: チェックイン
+        checkout: チェックアウト
+        number: 人数

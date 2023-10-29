@@ -1,4 +1,4 @@
-<%= image_tag @user.avatar  if @user.avatar.attached %>
+
 
 <h2 class = "optionTitle">設定</h2>
 <div class = "userOption">
@@ -12,6 +12,16 @@
             <h3>プロフィール</h3>
             <p><%= link_to "編集",edit_user_path(current_user.id),class: "optionEdit" %></p>
         </div>
+
+        <div class = "userIcon">
+            <p>ーアイコン画像ー</p>
+            <% if current_user.avatar.blank? %>
+                <p>アイコン未登録</p>
+            <% else %>
+                <%= image_tag @user.avatar, class: "userIconImg" %>
+            <% end %>
+        </div>    
+        
         <div class = "userEmail">
             <p>ー ユーザー名 ー</p>
             <%= @user.name %>

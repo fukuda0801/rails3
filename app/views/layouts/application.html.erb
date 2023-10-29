@@ -14,17 +14,25 @@
     <div class = "loginHeader">
       <h1><%= link_to "★ HAMSTER TRAVEL ★", root_path, class: 'headerLogo' %></h1>
       <% if user_signed_in? %>
-        <div class = "menuBox">
-          <label class = "logined" id = "menu" for = "toggle"><%= current_user.name %></label>
-          <input type = "checkbox" id = "toggle">
-          <ul class = "dropdown_menu">
-            <li><%= link_to "施設登録",new_room_path %></li>
-            <li>予約済み一覧</li>
-            <li><%= link_to "登録済み一覧",rooms_path %></li>
-            <li><%= link_to "アカウント設定",homes_show_path %></li>
-            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <nav class = "navbar">
+          <% if current_user.avatar.blank? %>
+            <p class = "notIconImg">アイコン未登録</p>
+          <% else %>
+            <%= image_tag current_user.avatar, class: "userIconImgHome" %>
+          <% end %>
+          <ul class = "nav-menu">
+            <li><%= current_user.name %>
+              <ul>
+                <li><%= link_to "施設登録",new_room_path %></li>
+                <li><%= link_to "予約済み一覧", reservations_path %></li>
+                <li><%= link_to "登録済み一覧",rooms_path %></li>
+                <li><%= link_to "アカウント設定",homes_show_path %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
           </ul>
-        </div>
+        </nav>
+    
       <% else %>
         <div>
           <p class = "notLogin">ログインしていません</p>

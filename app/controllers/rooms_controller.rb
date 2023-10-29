@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   def index
     @rooms = Room.all
+
   end
 
   def new
@@ -8,7 +9,7 @@ class RoomsController < ApplicationController
   end 
 
   def create
-    @room = Room.new(params.require(:room).permit(:name, :introduction, :value, :address, :hotel))
+    @room = Room.new(params.require(:room).permit(:name, :introduction, :value, :address, :hotel,:user_id))
     if @room.save
       flash[:notice] = "施設を新規登録しました"
       redirect_to rooms_path
@@ -19,8 +20,8 @@ class RoomsController < ApplicationController
   
   def show 
     @room = Room.find(params[:id])
-
     @q = Room.ransack(params[:q])
+    
   end 
 
   def edit 
@@ -29,7 +30,7 @@ class RoomsController < ApplicationController
 
   def update
     @room = Room.find(params[:id])
-    if @room.update(params.require(:room).permit(:name, :introduction, :value, :address, :hotel))
+    if @room.update(params.require(:room).permit(:name, :introduction, :value, :address, :hotel, :user_id))
       flash[:notice] = "施設情報を編集しました"
       redirect_to rooms_path
     else
