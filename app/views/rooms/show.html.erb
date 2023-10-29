@@ -10,10 +10,10 @@
             <%= f.hidden_field :room_id, value: @room.id %>
             
             <%= f.label :checkin, "チェックイン",class: "reserField" %>
-            <%= f.date_field :checkin %><br>
+            <%= f.date_field :checkin, required: true %><br>
     
             <%= f.label :checkout, "チェックアウト", class: "reserField" %>
-            <%= f.date_field :checkout %><br>
+            <%= f.date_field :checkout, required: true %><br>
     
             <%= f.label :number, "人数", class:"reserField" %>
             <%= f.number_field :number %><br>
