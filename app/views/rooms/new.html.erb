@@ -1,0 +1,41 @@
+<h2 class = "roomNew">新規施設登録</h2>
+
+<%= render "shared/error",obj: @room %>
+
+<%= form_with model: @room do |f| %>
+    <table>
+        <tr>
+            <th><%= f.label :name, "施設名" %></th>
+            <td><%= f.text_field :name %></td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :introduction, "施設詳細" %></th>
+            <td><%= f.text_area :introduction %></td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :value, "料金 /泊" %></th>
+            <td><%= f.text_field :value %></td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :address, "住所" %></th>
+            <td><%= f.text_field :address %></td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :hotel, "画像" %></th>
+            <td><%= f.file_field :hotel %></td>
+        </tr>
+    </table>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <div>
+        <ul>
+            <li class = "roomNewBtnLi"><%= f.submit "登録完了する", class: "roomNewBtn" %></li>
+            <li class = "roomNewCancel"><%= link_to "キャンセル", rooms_path %></li>
+        </ul>
+    </div>
+
+<% end %>

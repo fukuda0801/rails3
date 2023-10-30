@@ -1,0 +1,22 @@
+<h2 class = "optionTitle">設定</h2>
+<div class = "userOption">
+    <ul class = "userOptionTab">
+        <li><%= link_to "アカウント", homes_show_path, class: "option" %></li>
+        <li><%= link_to "プロフィール", user_path(current_user.id), class: "option" %></li>
+    </ul>
+
+    <div>
+        <div class = "userAccount">
+            <h3>アカウント</h3>
+            <p><%= link_to "編集",edit_user_registration_path,class: "optionEdit" %></p>
+        </div>
+        <div class = "userEmail">
+            <p>ー メールアドレス ー</p>
+            <%= @user.email %>
+        </div>
+        <div class = "userPassword">
+            <p>ー パスワード ー</p>
+            <p>******</p>
+        </div>
+    </div>
+</div>

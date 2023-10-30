@@ -1,0 +1,30 @@
+<h2 class = "roomReg">登録済み一覧</h2>
+
+<% if flash[:notice] %>
+    <p class = "notice"><%= flash[:notice] %></p>
+<% end %>
+
+<table class = roomTable>
+    <thead>
+        <tr>
+            <th class = "roomTh">画像</th>
+            <th class = "roomTh">施設名</th>
+            <th class = "roomTh">紹介文</th>
+            <th class = "roomTh">料金 /泊</th>
+            <th class = "roomTh">作成日</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @rooms.each do |room| %>
+            <tr>
+                <td class = "roomTd"><%= image_tag room.hotel.url ,class: "roomImg" %></td>       
+                <td class = "roomTd"><%= link_to room.name,room_path(room),class: "roomLink" %></td>
+                <td class = "roomTd"><%= room.introduction %></td>
+                <td class = "roomTd"><%= room.value %></td>
+                <td class = "roomTd"><%= room.created_at.to_s(:datetime_jp) %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+    
