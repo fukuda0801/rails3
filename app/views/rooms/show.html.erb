@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+    <p class = "notice"><%= flash[:notice] %></p>
+<% end %>
 <div class = "hotelContent">
     <p><%= image_tag @room.hotel.url, class: "hotelContentImg" %></p>
     <div class = "hotelContentDetail">
@@ -16,7 +19,7 @@
             <%= f.date_field :checkout, required: true %><br>
     
             <%= f.label :number, "人数", class:"reserField" %>
-            <%= f.number_field :number %><br>
+            <%= f.number_field :number, required: true %><br>
     
             <%= f.submit "予約確認へ", class: "reserBtn" %>
         <% end %>

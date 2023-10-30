@@ -1,8 +1,5 @@
 <h2 class = "roomReg">予約済み一覧</h2>
 
-<% if flash[:notice] %>
-    <p class = "notice"><%= flash[:notice] %></p>
-<% end %>
 
 <table class = roomTable>
     <thead>
@@ -24,10 +21,10 @@
                 <td class = "roomTd"><%= image_tag reservation.room.hotel.url, class: "roomImg" %></td>
                 <td class = "roomTd"><%= reservation.room.name %></td>
                 <td class = "roomTd"><%= reservation.room.introduction %></td>
-                <td class = "roomTd"><%= reservation.checkin %></td>       
-                <td class = "roomTd"><%= reservation.checkout %></td>
+                <td class = "roomTd"><%= reservation.checkin.strftime("%Y/%m/%d") %></td>       
+                <td class = "roomTd"><%= reservation.checkout.strftime("%Y/%m/%d") %></td>
                 <td class = "roomTd"><%= reservation.price %></td>
-                <td class = "roomTd"><%= reservation.created_at.to_s(:datetime_jp) %></td>
+                <td class = "roomTd"><%= reservation.created_at.strftime("%Y/%m/%d %H:%M") %></td>
                 <td class = "roomTd"><%= link_to "取消", reservation,method: :delete, data: { confirm: "本当に削除しますか？"} %></td>
             </tr>
         <% end %>

@@ -8,6 +8,16 @@ class ReservationsController < ApplicationController
     @room = Room.find(params[:room_id])
     @days = (@reservation.checkout - @reservation.checkin).to_i
     @price = @days * @room.value.to_i * @reservation.number.to_i
+    if @reservation.checkin < Time.zone.today
+      flash[:notice] = "チェックインは本日以降の日付としてください"
+      render "rooms/show"
+    elsif @reservation.checkin >= @reservation.checkout
+      flash[:notice] = "チェックアウトはチェックイン以降の日付としてください"
+      render "rooms/show"
+    elsif @reservation.number < 1
+      flash[:notice] = "人数は１人以上にしてください"
+      render "rooms/show"
+    end 
   end 
 
   def create

@@ -8,11 +8,11 @@
 
         <%= f.label :checkin, "チェックイン" %>
         <%= f.hidden_field :checkin, value: @reservation.checkin %>
-        <%= @reservation.checkin %><br>
+        <%= @reservation.checkin.strftime("%Y/%m/%d") %><br>
 
         <%= f.label :checkout, "チェックアウト" %>
         <%= f.hidden_field :checkout, value: @reservation.checkout %>
-        <%= @reservation.checkout %><br>
+        <%= @reservation.checkout.strftime("%Y/%m/%d") %><br>
         
 
         <p>宿泊数：<%= @days %>日</p>
