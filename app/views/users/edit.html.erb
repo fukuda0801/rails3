@@ -1,0 +1,24 @@
+<h2 class = "profileTitle">プロフィール編集</h2>
+
+<%= form_with model: @user do |f| %>
+    <table>
+        <tr>
+            <th><%= f.label :avatar,"アイコン画像" %></th>
+            <td><%= f.file_field :avatar %></td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :name,"ユーザー名" %></th>
+            <td><%= f.text_field :name %></td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :introduction, "自己紹介" %></th>
+            <td><%= f.text_area :introduction %></td>
+        </tr>
+    </table>
+
+    <%= f.submit "編集を終了する", class: "profileEditBtn"%>
+    <%= link_to "プロフィールに戻る",user_path(current_user.id),class: "profileBack" %>
+
+<% end %>

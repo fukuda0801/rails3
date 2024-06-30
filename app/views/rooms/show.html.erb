@@ -1,0 +1,37 @@
+<% if flash[:notice] %>
+    <p class = "notice"><%= flash[:notice] %></p>
+<% end %>
+<div class = "hotelContent">
+    <p><%= image_tag @room.hotel.url, class: "hotelContentImg" %></p>
+    <div class = "hotelContentDetail">
+        <p><%= @room.name %></p>
+        <p><%= @room.address %></p>
+        <p>★★★★★</p>
+        <p><%= @room.value %></p>
+        <p><%= @room.introduction %></p>
+        <%= form_with url: reservations_confirm_path do |f| %>
+            <%= f.hidden_field :room_id, value: @room.id %>
+            
+            <%= f.label :checkin, "チェックイン",class: "reserField" %>
+            <%= f.date_field :checkin, required: true %><br>
+    
+            <%= f.label :checkout, "チェックアウト", class: "reserField" %>
+            <%= f.date_field :checkout, required: true %><br>
+    
+            <%= f.label :number, "人数", class:"reserField" %>
+            <%= f.number_field :number, required: true %><br>
+    
+            <%= f.submit "予約確認へ", class: "reserBtn" %>
+        <% end %>
+    </div>
+
+    
+</div>
+
+
+
+<div class = "hotelContentBtn">
+    <p class = "hotelContentBtnP"><%= link_to "戻る", :back, class: "hotelB" %></p>
+    <p class = "hotelContentBtnP"><%= link_to "編集", edit_room_path(@room), class: "hotelB" %></p>
+    <p class = "hotelContentBtnP"><%= link_to "削除", room_path(@room),method: :delete, data: { confirm: "本当に削除しますか？"}, class: "hotelB" %></p>
+</div>

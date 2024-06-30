@@ -1,0 +1,31 @@
+<p class = "reserConfirmTitle">予約確認画面</p>
+<%= render "shared/error", obj: @reservation %>
+
+<div class = "reserConfirm">
+    <%= form_with model: @reservation do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+
+        <%= f.label :checkin, "チェックイン" %>
+        <%= f.hidden_field :checkin, value: @reservation.checkin %>
+        <%= @reservation.checkin.strftime("%Y/%m/%d") %><br>
+
+        <%= f.label :checkout, "チェックアウト" %>
+        <%= f.hidden_field :checkout, value: @reservation.checkout %>
+        <%= @reservation.checkout.strftime("%Y/%m/%d") %><br>
+        
+
+        <p>宿泊数：<%= @days %>日</p>
+        <p>人数：<%= @reservation.number %>人</p>
+        <%= f.hidden_field :number, value: @reservation.number %>
+
+        <%= f.label :price, "合計金額" %>
+        <%= @price %>
+        <%= f.hidden_field :price, value: @price %><br>
+    
+
+        <%= f.submit "予約を確定する",data: {confirm: "本当に予約しますか？"},class: "reserConfirmSubmit" %>
+    <% end %>
+
+    <%= link_to "トップページへ戻る",root_path, class: "reserConfirmBack" %>
+</div>

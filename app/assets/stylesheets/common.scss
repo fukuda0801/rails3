@@ -1,0 +1,561 @@
+/*メニューボタン*/
+body{
+    min-height: 100vh;
+    margin:0;
+    position:relative;
+    padding-bottom: 120px;
+    box-sizing: border-box;
+    background-color: #f5fffa;
+}
+
+.navbar {
+    width: 20%;
+    background-color:#000066;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 6rem;
+    margin-left: 0;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    color: #fff;
+}
+
+.nav-menu>li {
+    position: relative;
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.nav-menu>li>a {
+    color: #fff;
+}
+
+.nav-menu>li>a::after {
+    padding-left: 0.2rem;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1rem;
+    content: '\f0d7';
+}
+
+
+.nav-menu a {
+    text-decoration: none;
+}
+
+
+.nav-menu li li a {
+    display: block;
+    padding: 1rem;
+    color:#000066;
+}
+
+.nav-menu li ul {
+    position: absolute;
+    width: 200px;
+    top: 3rem;
+    height: 0;
+    overflow: hidden;
+    box-shadow: 0 0px 5px #333;
+    background-color: #efefef;
+}
+
+.nav-menu li:hover>ul {
+    height: auto;
+    overflow: visible;
+}
+
+.nav-menu li li a:hover {
+    background-color:#000066;
+    color: #fff;
+}
+
+/*ヘッダー*/
+
+.loginHeader{
+    color:white;
+    background-color:#000066;
+    display: flex;
+    justify-content: space-between;
+}
+
+.notLogin{
+    color:white;
+    float: left;
+    margin: 2rem 1rem 0 1rem;
+    
+    
+}
+
+.login{
+    text-decoration: none;
+}
+
+.login,.login:visited{
+    color:white;
+}
+
+.headerLogo{
+    text-decoration: none;
+    margin-left:2rem;
+    font-family: "Arial Black",sans-serif;
+    font-size:2.5rem;
+
+}
+
+.headerLogo,.headerLogo:visited{
+    color:white;
+}
+
+.userIconImgHome{
+    width:2rem;
+    height:2rem;
+    display: block;
+    margin-top:2rem;
+}
+
+.notIconImg{
+    margin-top: 2rem;
+}
+
+
+
+
+/*テーブル関連（ログイン時など）*/
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td{
+    padding:1rem 2rem;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+
+.newBtn{
+    background-color: #003399;
+    color:white;
+    border-radius:10px;
+    padding:5px 10px;
+    font-size: 1.1rem;
+    margin-left: auto;
+    display: block;
+    margin:1.2rem auto;
+}
+
+/*新規登録、ログイン画面*/
+.newTitle{
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 2rem;
+}
+
+.logined{
+    display: block;
+    margin:2rem 4rem 0 0;
+    font-size: 1.3rem;
+}
+
+
+/*アカウント設定*/
+.optionTitle{
+    margin-left:4rem;
+    font-size: 2.2rem;
+}
+
+.userOption{
+    display:flex;
+}
+
+.userOptionTab{
+    list-style:circle;
+    font-size: 1.3rem;
+    margin:1rem 6rem 0 4rem;
+    row-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.option{
+    text-decoration: none;
+    font-weight: 600;
+}
+.option,.option:visited{
+    color:black;
+}
+
+.userAccount{
+    display: flex;
+    column-gap: 40rem;
+    font-size: 1.5rem;
+    border-bottom: double;
+    border-color: #003399;
+    border-width: 3px; 
+}
+
+.optionEdit{
+    text-decoration: none;
+}
+.optionEdit,.optionEdit:visited{
+    color:#003399;
+}
+
+.userEmail{
+    font-size: 1.3rem;
+}
+
+.userPassword{
+    font-size: 1.3rem;
+    margin-bottom:2rem;
+}
+
+.userIcon{
+    font-size: 1.3rem;
+}
+
+.userIconImg{
+    display: block;
+    width:20%;
+}
+
+/*アカウント編集画面*/
+.accountEditTitle{
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 2rem;
+}
+
+.accountEditBtn{
+    background-color: #003399;
+    color:white;
+    border-radius:10px;
+    padding:5px 10px;
+    font-size: 1.1rem;
+    display: block;
+    margin:1.2rem auto;
+}
+
+/*プロフィール編集*/
+.profileEditBtn{
+    background-color: #003399;
+    color:white;
+    border-radius: 10px;
+    padding:5px 10px;
+    font-size:1.1rem;
+    display: block;
+    margin:1.2rem auto;
+}
+
+.profileBack{
+    text-align: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: block;
+}
+
+.profileBack,.profileBack:visited{
+    color:black;
+}
+
+.profileTitle{
+    text-align: center;
+    margin-top:2rem;
+}
+
+/*notice*/
+.notice{
+    background-color: #003399;
+    color:white;
+    padding:5px;
+}
+
+/*登録済み一覧*/
+.roomTable{
+    border-collapse: separate;
+    border-spacing: 5px;
+    width:100%;
+}
+
+.roomTh{
+    color:white;
+    border-radius: 5px;
+    text-align: center;
+    padding:10px 0;
+    background-color: #003399;
+    border:solid 1px #003399;
+}
+.roomTd{
+    border-radius: 5px;
+    text-align: center;
+    padding:10px 0;
+    background-color: #d7eeff;
+    border:solid 1px #d7eeff;
+}
+
+.roomImg{
+    display: block;
+    height:6rem;
+    margin: auto;
+}
+
+.roomReg{
+    margin-left: 3rem;
+}
+
+.roomLink{
+    text-decoration: none;
+}
+
+.roomLink:visited{
+    color:blue;
+}
+
+/*room登録画面*/
+.roomNew{
+    text-align: center;
+}
+
+.roomNewBtn{
+    text-align: center;
+    margin-bottom: 2rem;
+    background-color: #003399;
+    color:white;
+    border-radius: 10px;
+    padding:0.5rem 1rem;
+}
+
+.roomNewBtnLi{
+    text-align: center;
+    margin-bottom: 1rem;
+
+}
+
+.roomNewCancel{
+    text-align: center;
+
+}
+
+ul{
+    list-style: none;
+}
+
+/*ホーム画面*/
+.mainTitle{
+    text-align: center;
+    margin-top: 0;
+    font-size: 3.5rem;
+    color:white;
+    font-family:"Arial Black",sans-serif;
+}
+
+.mainSearch{
+    padding: 5rem 10rem;
+    background-image:url("https://stay-concierge.img-ikyu.com/concierge/wp-content/uploads/2020/05/goura_kadan.jpg");
+    background-size: cover;
+}
+
+.searchBox{
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+}
+
+.searchArea{
+    width:25rem;
+    height:3rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+.searchBtn{
+    width: 25rem;
+    height:3rem;
+    border-radius: 10px;
+    color:white;
+    font-size: 1.2rem;
+    background-color: #003399;
+}
+
+.mainContentTitle{
+    color:white;
+    font-family:"Arial Black",sans-serif;
+    font-size: 3rem;
+}
+
+.mainContent{
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.mainContentFavorite{
+    text-decoration: none;
+    color:white;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    padding:1rem;
+    background-color: #003399;
+    border-radius: 1rem;
+}
+
+.mainContentFavorite:visited{
+    color:white;
+}
+
+/*フッダー部分*/
+.footer{
+    width:100%;
+    background-color: #000066;
+    color:white;
+    position: absolute;
+    bottom:0;
+    height:120px;
+}
+
+/*検索結果画面*/
+.searchAllHotel{
+    margin:2rem 5rem;
+}
+
+.searchHotel{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:10px 20px;
+    
+}
+
+.searchHotel{
+    background-color: #d7eeff;
+    padding:1.5rem 2rem;
+}
+
+.searchImg{
+    width:100%;
+}
+
+.star{
+    color:#ffcc00;
+    font-size: 1.5rem;
+}
+
+.searchResultP{
+    font-size: 1.2rem;
+}
+
+.searchResultI{
+    font-size: 1.2rem;
+    word-break: break-all;
+}
+
+.searchCount{
+    margin-left: 5rem;
+    font-size: 1.5rem;
+}
+
+.resultSearchBox{
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.resultSearchArea{
+    width:10%;
+    height:1.5rem;
+}
+
+.resultSearchBtn{
+    border-radius: 4px;
+    color:white;
+    background-color: #003399;
+}
+
+/*ホテル詳細ページ*/
+.hotelContent{
+    display:flex;
+    margin: 2rem 2rem;
+    background-color: #d7eeff;
+}
+.hotelContentImg{
+    width:100%;
+    margin: 3rem 2rem;
+}
+
+.hotelContentDetail{
+    margin:3rem 3rem;
+}
+.hotelContentBtn{
+    margin:2rem 3rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hotelContentBtnP{
+    margin-left:3rem;
+    background-color: #003399;
+    color:white;
+    padding:1.2rem;
+    border-radius: 1.4rem;
+}
+.hotelB{
+    text-decoration: none;
+    color:white;
+}
+
+.hotelB:visited{
+    color:white;
+}
+
+.reserBtn{
+    padding:0.2rem 1.5rem;
+    background-color: #003399;
+    color:white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.reserField{
+    display: block;
+    margin: 0.3rem;
+}
+
+
+/*予約確認画面*/
+.reserConfirmTitle{
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 700;
+}
+
+.reserConfirm{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.reserCheckin{
+    margin-bottom: 1.5rem;
+}
+
+.reserCheckout{
+    margin-bottom: 1.2rem;
+}
+
+.reserConfirmSubmit{
+    padding: 0.2rem 2rem;
+    background-color: #000066;
+    color:white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+}
+
+.reserConfirmBack{
+    margin-bottom: 3rem;
+}
